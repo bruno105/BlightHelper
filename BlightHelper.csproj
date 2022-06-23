@@ -64,6 +64,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>"C:\Users\bruno\OneDrive\Área de Trabalho\DreamPoeBot\01 PoEHelper\Plugins\Source\BlightHelper\Copy.ahk"</PostBuildEvent>
+    <PostBuildEvent>"C:\Users\bruno\OneDrive\Área de Trabalho\DreamPoeBot\01 PoEHelper\Plugins\Source\BlightHelper\BlightHelper\Copy.ahk"</PostBuildEvent>
   </PropertyGroup>
 </Project>

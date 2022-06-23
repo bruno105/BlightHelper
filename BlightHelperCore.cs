@@ -59,6 +59,7 @@ namespace BlightHelper
             FilterMods.Clear();
             foreach (string line in lines)
             {
+                if(line.Length <= 2) continue;
                 if (line.Contains("/")) continue;
                 string mod = line.Contains("|") ? line.Split('|')[0].Trim() : line.Trim();
                 FilterMods.Add(mod);
