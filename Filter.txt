@@ -1,0 +1,5 @@
+//Name|Weight|Choice
+#Good
+Drops (1–3) additional Scarab|10|Boss
+#Bad
+
