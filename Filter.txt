@@ -1,5 +1,27 @@
 //ModNameOrPassiveID|Description(Opitional)
-BlightEnchantmentFrostboltNovaTowerFullDamage|Ring teste
+BlightEnchantmentArcTowerRepeat|Clear and Silver
+BlightEnchantmentChillingTowerSpecial|Opal and Silver
+BlightEnchantmentEmpoweringTowerCastSpeed|Silver and Violet
+BlightEnchantmentEmpoweringTowerDamage|Silver and Black
+BlightEnchantmentEmpoweringTowerDoubleDamage|Golden and Golden
+BlightEnchantmentFireballTowerSpecial|Opal and Golden
+BlightEnchantmentImbuingTowerCritical|Silver and Crimson
+BlightEnchantmentImbuingTowerDamage|Golden and Violet
+BlightEnchantmentLightningStormTowerExplosionArea|Golden and Sepia
+BlightEnchantmentLightningStormTowerStormsOnEnemies|Silver and Indigo
+BlightEnchantmentSeismicTowerAdditional|Golden and Verdant
+BlightEnchantmentSeismicTowerSpecial|Silver and Golden
+BlightEnchantmentSeismicTowerStunDuration|Silver and Sepia
+BlightEnchantmentShockNovaTowerShockEffect|Clear and Golden
+BlightEnchantmentShockNovaTowerSpecial|Golden and Black
+BlightEnchantmentSmotheringTowerReducedDamage|Golden and Crimson
+BlightEnchantmentStoneGazeTowerCooldown|Silver and Verdant
+BlightEnchantmentStoneGazeTowerPetrifyDuration|Golden and Azure
+BlightEnchantmentSummoningTowerLife|Silver and Teal
+BlightEnchantmentTemporalTowerDuration|Golden and Teal
+BlightEnchantmentSummoningTowerSpecial|Silver and Silver
+BlightEnchantmentTemporalTowerTick|Silver and Amber
+BlightEnchantmentTowerDamagePerTowerType|Golden and Indigo
 15027|Teste
 1325|Golems Blood
 2959|Season of Ice
@@ -84,33 +106,3 @@ BlightEnchantmentFrostboltNovaTowerFullDamage|Ring teste
 63422|Master of Carnage
 64217|Aspect of Stone
 65210|Heart of the Oak
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
