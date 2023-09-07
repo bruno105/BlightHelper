@@ -1,0 +1,109 @@
+//ModNameOrPassiveID|Description(Opitional)
+BlightEnchantmentArcTowerRepeat|Clear and Silver
+BlightEnchantmentChillingTowerSpecial|Opal and Silver
+BlightEnchantmentEmpoweringTowerCastSpeed|Silver and Violet
+BlightEnchantmentEmpoweringTowerDamage|Silver and Black
+BlightEnchantmentEmpoweringTowerDoubleDamage|Golden and Golden
+BlightEnchantmentFireballTowerSpecial|Opal and Golden
+BlightEnchantmentImbuingTowerCritical|Silver and Crimson
+BlightEnchantmentImbuingTowerDamage|Golden and Violet
+BlightEnchantmentLightningStormTowerExplosionArea|Golden and Sepia
+BlightEnchantmentLightningStormTowerStormsOnEnemies|Silver and Indigo
+BlightEnchantmentSeismicTowerAdditional|Golden and Verdant
+BlightEnchantmentSeismicTowerSpecial|Silver and Golden
+BlightEnchantmentSeismicTowerStunDuration|Silver and Sepia
+BlightEnchantmentShockNovaTowerShockEffect|Clear and Golden
+BlightEnchantmentShockNovaTowerSpecial|Golden and Black
+BlightEnchantmentSmotheringTowerReducedDamage|Golden and Crimson
+BlightEnchantmentStoneGazeTowerCooldown|Silver and Verdant
+BlightEnchantmentStoneGazeTowerPetrifyDuration|Golden and Azure
+BlightEnchantmentSummoningTowerLife|Silver and Teal
+BlightEnchantmentTemporalTowerDuration|Golden and Teal
+BlightEnchantmentSummoningTowerSpecial|Silver and Silver
+BlightEnchantmentTemporalTowerTick|Silver and Amber
+BlightEnchantmentTowerDamagePerTowerType|Golden and Indigo
+BlightEnchantmentSentinelTowerSpeed|Teste
+15027|Teste
+1325|Golems Blood
+2959|Season of Ice
+3452|Foresight
+4177|Spiritual Aid
+5624|Crusader
+6289|Bloodless
+6799|Charisma
+7263|Swift Venoms
+7688|Enduring Bond
+8833|Heart of ice
+9864|Growth and Decay
+11645|Breath fo Lightning
+11730|Endurance
+11820|Anoited Flesh
+11924|Breath of Flames
+12143|Influence
+13922|Steadfast
+15852|Etheral Feast
+16246|Tranquility
+18769|Written in Blood
+21330| Quick Recovery
+22535|Whispers of Doom
+23066|Savagery
+24133|Survivalist
+26023|Savage Wounds
+27119|Tribal Fury
+27137|Sanctum of Thought
+27203|Heart and Soul
+28754|Assassination
+29381|Ravenous Horde
+30439|Lava lash
+31257|Natural Authority
+33718|Champion of the Cause
+34506|Golem Commander
+34973|Measured Fury
+35958|Faith of Steel
+37647|Dismembering
+38246|Presage
+38922|Goliath
+39530|Vitality Void
+40849|Persistence
+41307|Deadly Inclinations
+42009|Soul of Steel
+42649|Snowforged
+43689|Spiritual Command
+44103|Reflexes
+45329|Trick Shot
+45803|Veteran Soldier
+47065|Master of Blades
+48298|Insightfulness
+48698|Void Barrier
+48807|Art of the Gladiator
+50029|Unnatural Calm
+51108|Arcane Capacitor
+51440|Druidic Rite
+52282|Tenacity
+53013|Atrophy
+53114|Revenge of Hunted
+53118|Barbarism
+53573|Arcane Expanse
+53759|Cleansed Thoughts
+54776|Mana Flows
+55485|Consitution
+56276|Nightstalker
+56648|Claws of the Falcon
+56716|Heart of Thunder
+57006|Vengeant Cascade
+58198|Fingers of Frost
+58449|Born to Fight
+58831|Disemboweling
+58921|Disciple of the Slaughter
+59151|Brutal Blade
+59766|Dirty Techiniques
+60031|Prismatic Skin
+60501|Heart of Flame
+61198|Heart of the Warrior
+61981|Doom Cast
+62577|Essence Surge
+62596|Mystic Talents
+63251|Inveterate
+63422|Master of Carnage
+64217|Aspect of Stone
+65210|Heart of the Oak
