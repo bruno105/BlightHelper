@@ -1,15 +1,14 @@
 ﻿using ExileCore;
 using ExileCore.PoEMemory.Components;
 using ExileCore.PoEMemory.Elements;
-using ExileCore.PoEMemory.MemoryObjects;
-using GameOffsets.Components;
-using SharpDX;
-using System;
+using ExileCore.Shared.Cache;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Versioning;
-using Vector2 = System.Numerics.Vector2;
+using ExileCore.PoEMemory.MemoryObjects;
+using System;
+using ExileCore.PoEMemory;
 
 namespace BlightHelper
 {
@@ -18,16 +17,45 @@ namespace BlightHelper
     {
         private const string FILTER_FILE = "Filter.txt";
         public List<string> FilterMods = new List<string>();
-        public List<LabelOnGround> DrawningList = new List<LabelOnGround>();
+        public List<Element> DrawningList = new List<Element>();
+        public CachedValue<List<(Entity item, Mods mods, Element element)>> _groundItems;
+
+
+
         public override bool Initialise()
         {
-
+            _groundItems = new TimeCache<List<(Entity item, Mods mods, Element element)>>(GetItemsOnGround, Settings.CacheTime.Value);
             Name = "BlightHelper";
             Settings.RefreshFile.OnPressed += () => { ReadFilterFile(); };
             ReadFilterFile();
 
             return true;
         }
+
+        private List<(Entity item, Mods mods, Element element)> GetItemsOnGround()
+        {
+
+            var labelsOnGround = GameController.IngameState.IngameUi.ItemsOnGroundLabelsVisible;
+            var result = new List<(Entity item, Mods mods, Element element)>();
+            foreach (var labelOnGround in labelsOnGround)
+            {
+                var item = labelOnGround.ItemOnGround;
+                if (item.TryGetComponent<WorldItem>(out var worldItem) &&
+                    worldItem.ItemEntity is { IsValid: true } groundItemEntity &&
+                    groundItemEntity.TryGetComponent<Mods>(out var mods) &&
+                    mods != null &&
+                    (worldItem.ItemEntity.Metadata.Contains("Rings") ||
+                    worldItem.ItemEntity.Metadata.Contains("Amulets") ||
+                    worldItem.ItemEntity.Metadata.Contains("MiscellaneousObjects")))
+                {
+
+                    result.Add(new(groundItemEntity, mods, labelOnGround.Label));
+                }
+            }
+
+            return result;
+        }
+
 
         private void ReadFilterFile()
         {
@@ -76,63 +104,34 @@ namespace BlightHelper
         }
         public override void AreaChange(AreaInstance area)
         {
-          
+
             DrawningList.Clear();
         }
 
         public override Job Tick()
         {
-            if (GameController.Area.CurrentArea.IsHideout || GameController.Area.CurrentArea.IsTown || 
+            if (GameController.Area.CurrentArea.IsHideout || GameController.Area.CurrentArea.IsTown ||
                 GameController.IngameState.IngameUi == null || GameController.IngameState.IngameUi.ItemsOnGroundLabelsVisible == null)
             {
                 return null;
             }
 
-
             DrawningList.Clear();
 
-
-            var Items = GameController.IngameState.IngameUi.ItemsOnGroundLabelsVisible.Where(x => x.ItemOnGround.HasComponent<ExileCore.PoEMemory.Components.WorldItem>()
-            && (x.ItemOnGround.GetComponent<ExileCore.PoEMemory.Components.WorldItem>().ItemEntity.Metadata.Contains("Rings")
-            || x.ItemOnGround.GetComponent<ExileCore.PoEMemory.Components.WorldItem>().ItemEntity.Metadata.Contains("MiscellaneousObjects")
-            || x.ItemOnGround.GetComponent<ExileCore.PoEMemory.Components.WorldItem>().ItemEntity.Metadata.Contains("Amulets"))).ToList();
-
-
-            foreach (var label in Items)
+            foreach (var item in _groundItems.Value)
             {
-                
-                var worlditem = label.ItemOnGround.GetComponent<ExileCore.PoEMemory.Components.WorldItem>();
-                var moditems = worlditem.ItemEntity.GetComponent<Mods>();
-                if (moditems == null) continue;
 
-
-                foreach (var mod in moditems.ItemMods)
+                foreach (var mod in item.mods.ItemMods)
                 {
-                    if (worlditem.ItemEntity.Metadata.Contains("Rings"))
+
+                    if (FilterMods.Contains(mod.Name))
                     {
-                        if (Settings.Debug2.Value == true) LogMessage($"Mod:{mod.Name}");
-
-                        if (FilterMods.Contains(mod.Name))
-                        {
-                            if (!DrawningList.Contains(label)) DrawningList.Add(label);
-                        }
+                        if (!DrawningList.Contains(item.Item3)) DrawningList.Add(item.Item3);
                     }
-                    else if (worlditem.ItemEntity.Metadata.Contains("Amulets"))
-                    {
-                        if (mod.Name == "GrantedPassive")
-                        {
-
-                            if (FilterMods.FirstOrDefault(x => x == mod.Values[0].ToString()) != null)
-                            {
-                                if (!DrawningList.Contains(label)) DrawningList.Add(label);
-                            }
-                        }
-                    }
-
                 }
-
-
             }
+
+
             return null;
         }
 
@@ -145,11 +144,10 @@ namespace BlightHelper
 
                 foreach (var item in DrawningList)
                 {
-                    if (item != null && item.IsVisible)
-                    {
-                        if (Settings.Debug2.Value == true) LogMessage($"Mod:{item.Label}");
-                         Graphics.DrawFrame(item.Label.GetClientRectCache, Settings.BaseColor, Settings.FrameThickness);
-                    }
+
+
+                    Graphics.DrawFrame(item.GetClientRectCache, Settings.BaseColor, Settings.FrameThickness);
+
                 }
 
             }

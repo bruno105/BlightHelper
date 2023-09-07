@@ -17,6 +17,8 @@ namespace BlightHelper
         public ColorNode BaseColor { get; set; } = new ColorNode(Color.DeepPink);
 
         public FilterList FilterList { get; set; } = new FilterList();
+
+        public RangeNode<int> CacheTime { get; set; } = new RangeNode<int>(100, 100, 500);
     }
     [Submenu]
     public class FilterList
